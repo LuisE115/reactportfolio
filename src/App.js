@@ -1,27 +1,31 @@
-import logo from './logo.svg';
+import logo from './images/logo.png';
 import './App.css';
 import Container from './components/Container';
 import cardimg from './images/pp.jpg';
-import Footer from './components/Footer';
+import React, { useState } from 'react';
+
 
 function App() {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="App">
-      <div className='container row'>
-        <div className="card col-sm-4">
-          <img className="card-img-top" src={cardimg} alt="Luis smiling" />
-          <div className="card-body">
-            <h2>Luis Enriquez</h2>
-            <p>Web Developer</p>
-          </div>
+      <div className='hpmenu'>
+        <img className="hplogo" src={logo} alt="homepage logo" />
+
+        <div className="info">
+          <h1>Luis Enriquez</h1>
+          <h2>Full Stack Web Developer</h2>
         </div>
-        <div className="col-sm-8">
+        <div className="navme" onClick={()=>{setOpen(!open)}}>
+            <img src={cardimg}></img>
+        </div>
+        <div className={`navlist ${open? 'act' : 'inactive'}`}>
           <Container />
         </div>
       </div>
-      <Footer />
     </div>
-
   );
 }
 

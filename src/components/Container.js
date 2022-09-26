@@ -6,7 +6,7 @@ import Header from './Header';
 import Project from './Project';
 
 export default function Container() {
-    const [currentPage, setCurrentPage] = useState('About');
+    const [currentPage, setCurrentPage] = useState('');
 
     const renderPage = () => {
         if (currentPage === 'About') {
